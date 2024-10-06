@@ -1,0 +1,129 @@
+﻿@model IEnumerable<Orcamento.Models.OrcamentoP>
+
+@{
+    ViewData["Title"] = "Index";
+    var totalValue = Model.Sum(item => item.Value);
+    var descriptions = Model.Select(item => item.Description).ToList();
+    var values = Model.Select(item => item.Value).ToList();
+    var dates = Model.Select(item => item.ActionCreate.ToString("dd/MM/yyyy")).ToList();
+}
+
+<h1>DashBoard Gastos</h1>
+
+<div class="dashboard-container">
+    <!-- Gráfico de Barras -->
+    <div class="chart-container">
+        <canvas id="barChart" class="chart"></canvas>
+    </div>
+
+    <!-- Gráfico de Linhas -->
+    <div class="chart-container">
+        <canvas id="lineChart" class="chart"></canvas>
+    </div>
+
+    <!-- Gráfico de Pizza -->
+    <div class="chart-container">
+        <canvas id="pieChart" class="chart"></canvas>
+    </div>
+</div>
+
+<!-- Tabela de Dados -->
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Value)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ActionCreate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Value)
+                </td>
+                <td>
+                    @item.ActionCreate.ToString("dd/MM/yyyy")
+                </td>
+                <td>
+                    <a class="btn-svg" asp-action="Edit__G" asp-route-id="@item.Id"><img src="~/Images/Edit.svg" alt="Edit" /></a> |
+                    <a class="btn-svg" asp-action="Delete__G" asp-route-id="@item.Id"><img src="~/Images/Delete.svg" alt="Delete" /></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr class="Total">
+            <td colspan="3" style="text-align: right;">Total:</td>
+            <td>@totalValue.ToString("C")</td>
+        </tr>
+    </tfoot>
+</table>
+
+<!-- Scripts do Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    // Obtenção dos dados do servidor
+    var descriptions = @Html.Raw(Json.Serialize(descriptions));
+    var values = @Html.Raw(Json.Serialize(values));
+    var dates = @Html.Raw(Json.Serialize(dates));
+
+    // Gráfico de Barras
+    var ctxBar = document.getElementById('barChart').getContext('2d');
+    var barChart = new Chart(ctxBar, {
+        type: 'bar',
+        data: {
+            labels: descriptions,
+            datasets: [{
+                label: 'Valores',
+                data: values,
+                backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        }
+    });
+
+    // Gráfico de Linhas
+    var ctxLine = document.getElementById('lineChart').getContext('2d');
+    var lineChart = new Chart(ctxLine, {
+        type: 'line',
+        data: {
+            labels: dates,
+            datasets: [{
+                label: 'Valores por Data',
+                data: values,
+                backgroundColor: 'rgba(75, 192, 192, 0.4)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1,
+                fill: true
+            }]
+        }
+    });
+
+    // Gráfico de Pizza
+    var ctxPie = document.getElementById('pieChart').getContext('2d');
+    var pieChart = new Chart(ctxPie, {
+        type: 'pie',
+        data: {
+            labels: descriptions,
+            datasets: [{
+                label: 'Distribuição de Gastos',
+                data: values,
+                backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0', '#9966ff', '#ff9f40'],
+            }]
+        }
+    });
+</script>

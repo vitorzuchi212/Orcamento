@@ -10,5 +10,8 @@ namespace Orcamento.InfraStructure.Data.Context
         
         } 
         public DbSet<OrcamentoP> OrcamentoP { get; set; }
+        public DbSet<OrcamentoRec> OrcamentoRec { get; set; }
+
+        public DbSet<OrcamentoGeral> OrcamentoGeral { get; set; }
     }
 }

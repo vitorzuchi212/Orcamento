@@ -2,7 +2,15 @@
   "Files": [
     {
       "Id": "C:\\Users\\srmig\\OneDrive\\Área de Trabalho\\Orcamento\\Orcamento\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Orcamento.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Orcamento.vv7ytn3wlc.bundle.scp.css"
+      "PackagePath": "staticwebassets\\Orcamento.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\srmig\\OneDrive\\Área de Trabalho\\Orcamento\\Orcamento\\wwwroot\\Images\\Delete.svg",
+      "PackagePath": "staticwebassets\\Images\\Delete.svg"
+    },
+    {
+      "Id": "C:\\Users\\srmig\\OneDrive\\Área de Trabalho\\Orcamento\\Orcamento\\wwwroot\\Images\\Edit.svg",
+      "PackagePath": "staticwebassets\\Images\\Edit.svg"
     },
     {
       "Id": "C:\\Users\\srmig\\OneDrive\\Área de Trabalho\\Orcamento\\Orcamento\\wwwroot\\css\\site.css",
@@ -243,10 +251,6 @@
     {
       "Id": "C:\\Users\\srmig\\OneDrive\\Área de Trabalho\\Orcamento\\Orcamento\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
-    },
-    {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Orcamento.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
-      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Orcamento.Microsoft.AspNetCore.StaticWebAssets.props",

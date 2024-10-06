@@ -17,6 +17,17 @@ namespace Orcamento.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.8");
 
+            modelBuilder.Entity("Orcamento.Models.OrcamentoGeral", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("OrcamentoGeral");
+                });
+
             modelBuilder.Entity("Orcamento.Models.OrcamentoP", b =>
                 {
                     b.Property<Guid>("Id")
@@ -30,12 +41,64 @@ namespace Orcamento.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<Guid?>("OrcamentoGeralId")
+                        .HasColumnType("TEXT");
+
                     b.Property<double>("Value")
                         .HasColumnType("REAL");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("OrcamentoGeralId");
+
                     b.ToTable("OrcamentoP");
+                });
+
+            modelBuilder.Entity("Orcamento.Models.OrcamentoRec", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("ActionCreateR")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DescriptionR")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid?>("OrcamentoGeralId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<double>("ValueR")
+                        .HasColumnType("REAL");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrcamentoGeralId");
+
+                    b.ToTable("OrcamentoRec");
+                });
+
+            modelBuilder.Entity("Orcamento.Models.OrcamentoP", b =>
+                {
+                    b.HasOne("Orcamento.Models.OrcamentoGeral", null)
+                        .WithMany("Gastos")
+                        .HasForeignKey("OrcamentoGeralId");
+                });
+
+            modelBuilder.Entity("Orcamento.Models.OrcamentoRec", b =>
+                {
+                    b.HasOne("Orcamento.Models.OrcamentoGeral", null)
+                        .WithMany("Receitas")
+                        .HasForeignKey("OrcamentoGeralId");
+                });
+
+            modelBuilder.Entity("Orcamento.Models.OrcamentoGeral", b =>
+                {
+                    b.Navigation("Gastos");
+
+                    b.Navigation("Receitas");
                 });
 #pragma warning restore 612, 618
         }

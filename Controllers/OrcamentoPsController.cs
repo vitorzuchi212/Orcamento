@@ -20,13 +20,15 @@ namespace Orcamento.Controllers
         }
 
         // GET: OrcamentoPs
-        public async Task<IActionResult> Index()
+        public IActionResult Index__G()
         {
-            return View(await _context.OrcamentoP.ToListAsync());
+            var orcamentos = _context.OrcamentoP.ToList();
+            var orderedOrcamentos = orcamentos.OrderBy(o => o.ActionCreate).ToList();
+            return View(orderedOrcamentos);
         }
 
         // GET: OrcamentoPs/Details/5
-        public async Task<IActionResult> Details(Guid? id)
+        public async Task<IActionResult> Details__G(Guid? id)
         {
             if (id == null)
             {
@@ -44,30 +46,27 @@ namespace Orcamento.Controllers
         }
 
         // GET: OrcamentoPs/Create
-        public IActionResult Create()
+        public IActionResult Create__G()
         {
             return View();
         }
 
         // POST: OrcamentoPs/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Description,Value,ActionCreate")] OrcamentoP orcamentoP)
+        public async Task<IActionResult> Create__G( OrcamentoP orcamentoP)
         {
             if (ModelState.IsValid)
             {
                 orcamentoP.Id = Guid.NewGuid();
                 _context.Add(orcamentoP);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index__G));
             }
             return View(orcamentoP);
         }
 
         // GET: OrcamentoPs/Edit/5
-        public async Task<IActionResult> Edit(Guid? id)
+        public async Task<IActionResult> Edit__G(Guid? id)
         {
             if (id == null)
             {
@@ -83,11 +82,9 @@ namespace Orcamento.Controllers
         }
 
         // POST: OrcamentoPs/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Description,Value,ActionCreate")] OrcamentoP orcamentoP)
+
+        public async Task<IActionResult> Edit__G(Guid id, OrcamentoP orcamentoP)
         {
             if (id != orcamentoP.Id)
             {
@@ -112,13 +109,13 @@ namespace Orcamento.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index__G));
             }
             return View(orcamentoP);
         }
 
         // GET: OrcamentoPs/Delete/5
-        public async Task<IActionResult> Delete(Guid? id)
+        public async Task<IActionResult> Delete__G(Guid? id)
         {
             if (id == null)
             {
@@ -136,8 +133,7 @@ namespace Orcamento.Controllers
         }
 
         // POST: OrcamentoPs/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        [HttpPost, ActionName("Delete__G")]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
             var orcamentoP = await _context.OrcamentoP.FindAsync(id);
@@ -147,7 +143,7 @@ namespace Orcamento.Controllers
             }
 
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index__G));
         }
 
         private bool OrcamentoPExists(Guid id)

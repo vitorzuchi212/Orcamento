@@ -35,24 +35,64 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoPs/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvUHNcQ3JlYXRlLmNzaHRtbA==
+[C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoGeral/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvR2VyYWxcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoPs/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvUHNcRGVsZXRlLmNzaHRtbA==
+[C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoGeral/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvR2VyYWxcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoPs/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvUHNcRGV0YWlscy5jc2h0bWw=
+[C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoGeral/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvR2VyYWxcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoPs/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvUHNcRWRpdC5jc2h0bWw=
+[C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoGeral/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvR2VyYWxcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoPs/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvUHNcSW5kZXguY3NodG1s
+[C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoGeral/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvR2VyYWxcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoPs/Create__G.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvUHNcQ3JlYXRlX19HLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoPs/Delete__G.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvUHNcRGVsZXRlX19HLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoPs/Details__G.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvUHNcRGV0YWlsc19fRy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoPs/Edit__G.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvUHNcRWRpdF9fRy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoPs/Index__G.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvUHNcSW5kZXhfX0cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoRec/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvUmVjXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoRec/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvUmVjXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoRec/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvUmVjXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoRec/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvUmVjXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoRec/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvUmVjXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/Shared/Error.cshtml]

@@ -1,0 +1,172 @@
+﻿@model Orcamento.Models.OrcamentoGeral
+
+@{
+    ViewData["Title"] = "Dashboard";
+
+    var descricaoGastos = Model.Gastos.Select(item => item.Description).ToList();
+    var valorGastos = Model.Gastos.Select(item => item.Value).ToList();
+    var datasGastos = Model.Gastos.Select(item => item.ActionCreate.ToString("dd/MM/yyyy")).ToList();
+
+    var descricaoReceitas = Model.Receitas.Select(item => item.DescriptionR).ToList();
+    var valorReceitas = Model.Receitas.Select(item => item.ValueR).ToList();
+    var datasReceitas = Model.Receitas.Select(item => item.ActionCreateR.ToString("dd/MM/yyyy")).ToList();
+
+
+    var totalGastos = Model.Gastos.Sum(item => item.Value);
+    var totalReceitas = Model.Receitas.Sum(item => item.ValueR);
+    var saldoFinal = totalReceitas - totalGastos;
+
+
+  
+}
+
+<h1>DashBoard Financeiro</h1>
+
+<!-- Exibição de Receitas -->
+<h2>Receitas</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Receitas.First().DescriptionR)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Receitas.First().ValueR)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Receitas.First().ActionCreateR)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Receitas)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DescriptionR)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValueR)
+                </td>
+                <td>
+                    @item.ActionCreateR.ToString("dd/MM/yyyy"))
+                </td>
+                <td>
+                    <a class="btn-svg" asp-action="Edit" asp-route-id="@item.Id"><img src="~/Images/Edit.svg" alt="Edit" /></a> |
+                    <a class="btn-svg" asp-action="Delete" asp-route-id="@item.Id"><img src="~/Images/Delete.svg" alt="Delete" /></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr class="Total">
+            <td colspan="3" style="text-align: right;">Total:</td>
+            <td>@totalReceitas.ToString("C")</td>
+        </tr>
+    </tfoot>
+</table>
+
+
+
+
+
+
+
+
+<!-- Exibição de Gastos -->
+
+<h2>Gastos</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Gastos.First().Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gastos.First().Value)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gastos.First().ActionCreate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Gastos)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Value)
+                </td>
+                <td>
+                    @item.ActionCreate.ToString("dd/MM/yyyy"))
+                </td>
+                <td>
+                    <a class="btn-svg" asp-action="Edit__G" asp-route-id="@item.Id"><img src="~/Images/Edit.svg" alt="Edit" /></a> |
+                    <a class="btn-svg" asp-action="Delete__G" asp-route-id="@item.Id"><img src="~/Images/Delete.svg" alt="Delete" /></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+ 
+<tfoot>
+    <tr class="Total">
+        <td colspan="3" style="text-align: right;">Total:</td>
+            <td>@totalGastos.ToString("C")</td>
+    </tr>
+</tfoot>
+</table>
+
+
+
+   
+
+<!-- Exibição do Saldo Final -->
+<h2>Saldo Final</h2>
+<p>O saldo final do mês é: <strong>@saldoFinal.ToString("C")</strong></p>
+
+
+
+
+
+<!-- Gráfico de Gastos -->
+<div class="dashboard-container">
+    <div class="chart-container">
+        <canvas id="barChart" class="chart"></canvas>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Dados para o gráfico de barras
+    var descricaoGastos = @Html.Raw(Json.Serialize(descricaoGastos));
+    var valorGastos = @Html.Raw(Json.Serialize(valorGastos));
+
+    var ctxBar = document.getElementById('barChart').getContext('2d');
+    var barChart = new Chart(ctxBar, {
+        type: 'bar',
+        data: {
+            labels: descricaoGastos,
+            datasets: [{
+                label: 'Gastos',
+                data: valorGastos,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
