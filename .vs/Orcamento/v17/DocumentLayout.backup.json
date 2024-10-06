@@ -1,0 +1,350 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|c:\\users\\srmig\\onedrive\\\u00E1rea de trabalho\\orcamento\\orcamento\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|solutionrelative:orcamento\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|c:\\users\\srmig\\onedrive\\\u00E1rea de trabalho\\orcamento\\orcamento\\views\\orcamentops\\create__g.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|solutionrelative:orcamento\\views\\orcamentops\\create__g.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|c:\\users\\srmig\\onedrive\\\u00E1rea de trabalho\\orcamento\\orcamento\\controllers\\orcamentoreccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|solutionrelative:orcamento\\controllers\\orcamentoreccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|c:\\users\\srmig\\onedrive\\\u00E1rea de trabalho\\orcamento\\orcamento\\infrastructure\\data\\context\\applicationdatacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|solutionrelative:orcamento\\infrastructure\\data\\context\\applicationdatacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Migrations\\20241005174537_AddRecTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Orcamento\\Migrations\\20241005174537_AddRecTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|c:\\users\\srmig\\onedrive\\\u00E1rea de trabalho\\orcamento\\orcamento\\migrations\\applicationdatacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|solutionrelative:orcamento\\migrations\\applicationdatacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|c:\\users\\srmig\\onedrive\\\u00E1rea de trabalho\\orcamento\\orcamento\\migrations\\20240910181425_addorcamentop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|solutionrelative:orcamento\\migrations\\20240910181425_addorcamentop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|c:\\users\\srmig\\onedrive\\\u00E1rea de trabalho\\orcamento\\orcamento\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|solutionrelative:orcamento\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|c:\\users\\srmig\\onedrive\\\u00E1rea de trabalho\\orcamento\\orcamento\\models\\orcamentorec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|solutionrelative:orcamento\\models\\orcamentorec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|c:\\users\\srmig\\onedrive\\\u00E1rea de trabalho\\orcamento\\orcamento\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|solutionrelative:orcamento\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|c:\\users\\srmig\\onedrive\\\u00E1rea de trabalho\\orcamento\\orcamento\\models\\orcamentop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|solutionrelative:orcamento\\models\\orcamentop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|c:\\users\\srmig\\onedrive\\\u00E1rea de trabalho\\orcamento\\orcamento\\controllers\\orcamentopscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|solutionrelative:orcamento\\controllers\\orcamentopscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|c:\\users\\srmig\\onedrive\\\u00E1rea de trabalho\\orcamento\\orcamento\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|solutionrelative:orcamento\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|c:\\users\\srmig\\onedrive\\\u00E1rea de trabalho\\orcamento\\orcamento\\views\\orcamentops\\delete__g.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|solutionrelative:orcamento\\views\\orcamentops\\delete__g.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|c:\\users\\srmig\\onedrive\\\u00E1rea de trabalho\\orcamento\\orcamento\\views\\orcamentops\\index__g.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|solutionrelative:orcamento\\views\\orcamentops\\index__g.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|c:\\users\\srmig\\onedrive\\\u00E1rea de trabalho\\orcamento\\orcamento\\views\\orcamentops\\details__g.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|solutionrelative:orcamento\\views\\orcamentops\\details__g.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|c:\\users\\srmig\\onedrive\\\u00E1rea de trabalho\\orcamento\\orcamento\\views\\orcamentops\\edit__g.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|solutionrelative:orcamento\\views\\orcamentops\\edit__g.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|c:\\users\\srmig\\onedrive\\\u00E1rea de trabalho\\orcamento\\orcamento\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|solutionrelative:orcamento\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|c:\\users\\srmig\\onedrive\\\u00E1rea de trabalho\\orcamento\\orcamento\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{559FF282-3F2D-4323-B542-C629A57B1DE0}|Orcamento\\Orcamento.csproj|solutionrelative:orcamento\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "Orcamento\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "Orcamento\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAAAGwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-09-20T18:37:08.088Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Index__G.cshtml",
+              "DocumentMoniker": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Views\\OrcamentoPs\\Index__G.cshtml",
+              "RelativeDocumentMoniker": "Orcamento\\Views\\OrcamentoPs\\Index__G.cshtml",
+              "ToolTip": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Views\\OrcamentoPs\\Index__G.cshtml",
+              "RelativeToolTip": "Orcamento\\Views\\OrcamentoPs\\Index__G.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-20T18:37:03.625Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Create__G.cshtml",
+              "DocumentMoniker": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Views\\OrcamentoPs\\Create__G.cshtml",
+              "RelativeDocumentMoniker": "Orcamento\\Views\\OrcamentoPs\\Create__G.cshtml",
+              "ToolTip": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Views\\OrcamentoPs\\Create__G.cshtml",
+              "RelativeToolTip": "Orcamento\\Views\\OrcamentoPs\\Create__G.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-20T18:37:18.343Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Orcamento\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Views\\Shared\\_Layout.cshtml*",
+              "RelativeToolTip": "Orcamento\\Views\\Shared\\_Layout.cshtml*",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABkAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-20T18:37:21.962Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrcamentoRecController.cs",
+              "DocumentMoniker": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Controllers\\OrcamentoRecController.cs",
+              "RelativeDocumentMoniker": "Orcamento\\Controllers\\OrcamentoRecController.cs",
+              "ToolTip": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Controllers\\OrcamentoRecController.cs",
+              "RelativeToolTip": "Orcamento\\Controllers\\OrcamentoRecController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T17:48:09.342Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20241005174537_AddRecTable.cs",
+              "DocumentMoniker": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Migrations\\20241005174537_AddRecTable.cs",
+              "RelativeDocumentMoniker": "Orcamento\\Migrations\\20241005174537_AddRecTable.cs",
+              "ToolTip": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Migrations\\20241005174537_AddRecTable.cs",
+              "RelativeToolTip": "Orcamento\\Migrations\\20241005174537_AddRecTable.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwCYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T17:45:38.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ApplicationDataContext.cs",
+              "DocumentMoniker": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\InfraStructure\\Data\\Context\\ApplicationDataContext.cs",
+              "RelativeDocumentMoniker": "Orcamento\\InfraStructure\\Data\\Context\\ApplicationDataContext.cs",
+              "ToolTip": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\InfraStructure\\Data\\Context\\ApplicationDataContext.cs",
+              "RelativeToolTip": "Orcamento\\InfraStructure\\Data\\Context\\ApplicationDataContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T17:16:42.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ApplicationDataContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Migrations\\ApplicationDataContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Orcamento\\Migrations\\ApplicationDataContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Migrations\\ApplicationDataContextModelSnapshot.cs",
+              "RelativeToolTip": "Orcamento\\Migrations\\ApplicationDataContextModelSnapshot.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T17:42:27.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "20240910181425_AddOrcamentoP.cs",
+              "DocumentMoniker": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Migrations\\20240910181425_AddOrcamentoP.cs",
+              "RelativeDocumentMoniker": "Orcamento\\Migrations\\20240910181425_AddOrcamentoP.cs",
+              "ToolTip": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Migrations\\20240910181425_AddOrcamentoP.cs",
+              "RelativeToolTip": "Orcamento\\Migrations\\20240910181425_AddOrcamentoP.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T00:56:09.522Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Orcamento\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Orcamento\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T17:42:31.994Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OrcamentoRec.cs",
+              "DocumentMoniker": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Models\\OrcamentoRec.cs",
+              "RelativeDocumentMoniker": "Orcamento\\Models\\OrcamentoRec.cs",
+              "ToolTip": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Models\\OrcamentoRec.cs",
+              "RelativeToolTip": "Orcamento\\Models\\OrcamentoRec.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T17:25:38.507Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Orcamento\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Orcamento\\Models\\ErrorViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T17:41:30.617Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "OrcamentoPsController.cs",
+              "DocumentMoniker": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Controllers\\OrcamentoPsController.cs",
+              "RelativeDocumentMoniker": "Orcamento\\Controllers\\OrcamentoPsController.cs",
+              "ToolTip": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Controllers\\OrcamentoPsController.cs",
+              "RelativeToolTip": "Orcamento\\Controllers\\OrcamentoPsController.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T17:16:27.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "OrcamentoP.cs",
+              "DocumentMoniker": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Models\\OrcamentoP.cs",
+              "RelativeDocumentMoniker": "Orcamento\\Models\\OrcamentoP.cs",
+              "ToolTip": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Models\\OrcamentoP.cs",
+              "RelativeToolTip": "Orcamento\\Models\\OrcamentoP.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T16:53:18.573Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "bootstrap.bundle.js",
+              "DocumentMoniker": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+              "RelativeDocumentMoniker": "Orcamento\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+              "ToolTip": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+              "RelativeToolTip": "Orcamento\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+              "ViewState": "AQIAAK8HAAAAAAAAAAAmwLgHAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-10-05T17:21:48.492Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Delete__G.cshtml",
+              "DocumentMoniker": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Views\\OrcamentoPs\\Delete__G.cshtml",
+              "RelativeDocumentMoniker": "Orcamento\\Views\\OrcamentoPs\\Delete__G.cshtml",
+              "ToolTip": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Views\\OrcamentoPs\\Delete__G.cshtml",
+              "RelativeToolTip": "Orcamento\\Views\\OrcamentoPs\\Delete__G.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAACQAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-30T17:28:48.149Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Details__G.cshtml",
+              "DocumentMoniker": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Views\\OrcamentoPs\\Details__G.cshtml",
+              "RelativeDocumentMoniker": "Orcamento\\Views\\OrcamentoPs\\Details__G.cshtml",
+              "ToolTip": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Views\\OrcamentoPs\\Details__G.cshtml",
+              "RelativeToolTip": "Orcamento\\Views\\OrcamentoPs\\Details__G.cshtml",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAACIAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-30T17:28:58.919Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Edit__G.cshtml",
+              "DocumentMoniker": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Views\\OrcamentoPs\\Edit__G.cshtml",
+              "RelativeDocumentMoniker": "Orcamento\\Views\\OrcamentoPs\\Edit__G.cshtml",
+              "ToolTip": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Views\\OrcamentoPs\\Edit__G.cshtml",
+              "RelativeToolTip": "Orcamento\\Views\\OrcamentoPs\\Edit__G.cshtml",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAwAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-30T17:29:00.556Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Orcamento\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\srmig\\OneDrive\\\u00C1rea de Trabalho\\Orcamento\\Orcamento\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Orcamento\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-20T18:38:11.774Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
