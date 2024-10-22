@@ -23,7 +23,7 @@ namespace Orcamento.Controllers
         public async Task<IActionResult> Index()
         {
             var orcamentosR = _context.OrcamentoRec.ToList();
-            var orderedOrcamentosR = orcamentosR.OrderBy(o => o.ActionCreateR).ToList();
+            var orderedOrcamentosR = orcamentosR.OrderByDescending(o => o.ActionCreateR).ToList();
             return View(orderedOrcamentosR);
         }
 

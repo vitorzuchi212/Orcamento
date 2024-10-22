@@ -23,7 +23,7 @@ namespace Orcamento.Controllers
         public IActionResult Index__G()
         {
             var orcamentos = _context.OrcamentoP.ToList();
-            var orderedOrcamentos = orcamentos.OrderBy(o => o.ActionCreate).ToList();
+            var orderedOrcamentos = orcamentos.OrderByDescending(o => o.ActionCreate).ToList();
             return View(orderedOrcamentos);
         }
 

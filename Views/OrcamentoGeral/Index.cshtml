@@ -1,7 +1,10 @@
 ﻿@model Orcamento.Models.OrcamentoGeral
 
+
 @{
-    ViewData["Title"] = "Dashboard";
+
+
+    ViewData["Title"] = "Dashboard Geral";
 
     var descricaoGastos = Model.Gastos.Select(item => item.Description).ToList();
     var valorGastos = Model.Gastos.Select(item => item.Value).ToList();
@@ -17,7 +20,7 @@
     var saldoFinal = totalReceitas - totalGastos;
 
 
-  
+
 }
 
 <h1>DashBoard Financeiro</h1>
@@ -51,7 +54,7 @@
                     @Html.DisplayFor(modelItem => item.ValueR)
                 </td>
                 <td>
-                    @item.ActionCreateR.ToString("dd/MM/yyyy"))
+                    @item.ActionCreateR.ToString("dd/MM/yyyy")
                 </td>
                 <td>
                     <a class="btn-svg" asp-action="Edit" asp-route-id="@item.Id"><img src="~/Images/Edit.svg" alt="Edit" /></a> |
@@ -77,7 +80,7 @@
 
 <!-- Exibição de Gastos -->
 
-<h2>Gastos</h2>
+<h2>Despesas</h2>
 <table class="table">
     <thead>
         <tr>
@@ -104,7 +107,7 @@
                     @Html.DisplayFor(modelItem => item.Value)
                 </td>
                 <td>
-                    @item.ActionCreate.ToString("dd/MM/yyyy"))
+                    @item.ActionCreate.ToString("dd/MM/yyyy")
                 </td>
                 <td>
                     <a class="btn-svg" asp-action="Edit__G" asp-route-id="@item.Id"><img src="~/Images/Edit.svg" alt="Edit" /></a> |
@@ -113,18 +116,18 @@
             </tr>
         }
     </tbody>
- 
-<tfoot>
-    <tr class="Total">
-        <td colspan="3" style="text-align: right;">Total:</td>
+
+    <tfoot>
+        <tr class="Total">
+            <td colspan="3" style="text-align: right;">Total:</td>
             <td>@totalGastos.ToString("C")</td>
-    </tr>
-</tfoot>
+        </tr>
+    </tfoot>
 </table>
 
 
 
-   
+
 
 <!-- Exibição do Saldo Final -->
 <h2>Saldo Final</h2>
@@ -134,39 +137,224 @@
 
 
 
-<!-- Gráfico de Gastos -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@* 
+
+
+<!-- Gráfico de Receita -------------->
 <div class="dashboard-container">
+    <!-- Gráfico de Barras -->
     <div class="chart-container">
-        <canvas id="barChart" class="chart"></canvas>
+        <canvas id="barChart__R" class="chart"></canvas>
+    </div>
+
+    <!-- Gráfico de Linhas -->
+    <div class="chart-container">
+        <canvas id="lineChart__R" class="chart"></canvas>
+    </div>
+
+    <!-- Gráfico de Pizza -->
+    <div class="chart-container">
+        <canvas id="pieChart__R" class="chart"></canvas>
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-    // Dados para o gráfico de barras
-    var descricaoGastos = @Html.Raw(Json.Serialize(descricaoGastos));
-    var valorGastos = @Html.Raw(Json.Serialize(valorGastos));
 
-    var ctxBar = document.getElementById('barChart').getContext('2d');
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    // Obtenção dos dados do servidor
+    var descriptions = @Html.Raw(Json.Serialize(descricaoReceitas));
+    var values = @Html.Raw(Json.Serialize(valorReceitas));
+    var dates = @Html.Raw(Json.Serialize(datasReceitas));
+
+    // Gráfico de Barras
+    var ctxBar = document.getElementById('barChart__R').getContext('2d');
     var barChart = new Chart(ctxBar, {
         type: 'bar',
         data: {
-            labels: descricaoGastos,
+            labels: descriptions,
             datasets: [{
-                label: 'Gastos',
-                data: valorGastos,
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                borderColor: 'rgba(255, 99, 132, 1)',
+                label: 'Valores',
+                data: values,
+                backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                borderColor: 'rgba(54, 162, 235, 1)',
                 borderWidth: 1
             }]
-        },
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
+        }
+    });
+
+    // Gráfico de Linhas
+    var ctxLine = document.getElementById('lineChart__R').getContext('2d');
+    var lineChart = new Chart(ctxLine, {
+        type: 'line',
+        data: {
+            labels: dates,
+            datasets: [{
+                label: 'Valores por Data',
+                data: values,
+                backgroundColor: 'rgba(75, 192, 192, 0.4)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1,
+                fill: true
+            }]
+        }
+    });
+
+    // Gráfico de Pizza
+    var ctxPie = document.getElementById('pieChart__R').getContext('2d');
+    var pieChart = new Chart(ctxPie, {
+        type: 'pie',
+        data: {
+            labels: descriptions,
+            datasets: [{
+                label: 'Distribuição de Gastos',
+                data: values,
+                backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0', '#9966ff', '#ff9f40'],
+            }]
         }
     });
 </script>
+
+
+
+
+<!------------------ Gráfico de Gastos -------------->
+
+
+<div class="dashboard-container">
+    <!-- Gráfico de Barras -->
+    <div class="chart-container">
+        <canvas id="barChart__G" class="chart"></canvas>
+    </div>
+
+    <!-- Gráfico de Linhas -->
+    <div class="chart-container">
+        <canvas id="lineChart__G" class="chart"></canvas>
+    </div>
+
+    <!-- Gráfico de Pizza -->
+    <div class="chart-container">
+        <canvas id="pieChart__G" class="chart"></canvas>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    // Obtenção dos dados do servidor
+    var descriptions = @Html.Raw(Json.Serialize(descricaoGastos));
+    var values = @Html.Raw(Json.Serialize(valorGastos));
+    var dates = @Html.Raw(Json.Serialize(datasGastos));
+
+    // Gráfico de Barras
+    var ctxBar = document.getElementById('barChart__G').getContext('2d');
+    var barChart = new Chart(ctxBar, {
+        type: 'bar',
+        data: {
+            labels: descriptions,
+            datasets: [{
+                label: 'Valores',
+                data: values,
+                backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        }
+    });
+
+    // Gráfico de Linhas
+    var ctxLine = document.getElementById('lineChart__G').getContext('2d');
+    var lineChart = new Chart(ctxLine, {
+        type: 'line',
+        data: {
+            labels: dates,
+            datasets: [{
+                label: 'Valores por Data',
+                data: values,
+                backgroundColor: 'rgba(75, 192, 192, 0.4)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1,
+                fill: true
+            }]
+        }
+    });
+
+    // Gráfico de Pizza
+    var ctxPie = document.getElementById('pieChart__G').getContext('2d');
+    var pieChart = new Chart(ctxPie, {
+        type: 'pie',
+        data: {
+            labels: descriptions,
+            datasets: [{
+                label: 'Distribuição de Gastos',
+                data: values,
+                backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0', '#9966ff', '#ff9f40'],
+            }]
+        }
+    });
+</script>  *@

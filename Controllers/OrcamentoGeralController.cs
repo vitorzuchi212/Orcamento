@@ -21,20 +21,25 @@ namespace Orcamento.Controllers
 
 
         // GET: OrcamentoGeral
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
+      
+            var gastos = _context.OrcamentoP.ToList();
+            var receita = _context.OrcamentoRec.ToList();
+
+            var orderedOrcamentosG = gastos.OrderByDescending(o => o.ActionCreate).ToList();
+            var orderedOrcamentosR = receita.OrderByDescending(o => o.ActionCreateR).ToList();
 
             var orcamentoGeral = new OrcamentoGeral
             {
-
-                Gastos = new List<OrcamentoP>(),
-                Receitas = new List<OrcamentoRec>()
+                Gastos = orderedOrcamentosG,
+                Receitas = orderedOrcamentosR
             };
-
-            return View(orcamentoGeral); 
+      
+            return View(orcamentoGeral);
         }
 
-    
+
         public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null)

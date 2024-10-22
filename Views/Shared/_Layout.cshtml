@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="~/Orcamento.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
+    <header class="fix">
     <div>
             <a class="logo" asp-area="" asp-controller="Home" asp-action="Index">Orçamento</a>
     </div>
@@ -20,20 +20,26 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li>
-                    <a class="nav-link text-dark" asp-area="" asp-controller="OrcamentoPs" asp-action="Create__G">Lançar Gasto</a>
+                    <a class="nav-link text-dark" asp-area="" asp-controller="OrcamentoPs" asp-action="Create__G">Lançamento</a>
                         </li>
-                        <li>
-                    <a class="nav-link text-dark" asp-area="" asp-controller="OrcamentoRec" asp-action="Create">Lançar Receita</a>
-                        </li> 
-                   
+                
                         
                     </ul>
                     <ul>
+                <li>
+                    <details>
+                        <summary>Relatorio</summary>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="OrcamentoPs" asp-action="Index__G">Relatorio Despesa</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="OrcamentoRec" asp-action="Index">Relatorio Receita</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="OrcamentoGeral" asp-action="Index">Relatorio Geral</a>
+                    </details>
+
+                </li>
                     <li>
                         <details>
                             <summary>DashBoards</summary>
-                            <a class="nav-link text-dark" asp-area="" asp-controller="OrcamentoPs" asp-action="Index__G">DashBoard Gasto</a>
-                            <a class="nav-link text-dark" asp-area="" asp-controller="OrcamentoRec" asp-action="Index">DashBoard receita</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="OrcamentoPs" asp-action="Index__G">DashBoard Despesa</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="OrcamentoRec" asp-action="Index">DashBoard Receita</a>
                             <a class="nav-link text-dark" asp-area="" asp-controller="OrcamentoGeral" asp-action="Index">DashBoard Geral</a>
                         </details>
 
