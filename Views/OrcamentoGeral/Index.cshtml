@@ -23,24 +23,18 @@
 
 }
 
-<h1>DashBoard Financeiro</h1>
+<h1>Relatorio Geral</h1>
 
-<!-- Exibição de Receitas -->
 <h2>Receitas</h2>
 
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Receitas.First().DescriptionR)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Receitas.First().ValueR)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Receitas.First().ActionCreateR)
-            </th>
-            <th></th>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Data</th>
+            <th>Ações</th>
+           
         </tr>
     </thead>
     <tbody>
@@ -57,8 +51,8 @@
                     @item.ActionCreateR.ToString("dd/MM/yyyy")
                 </td>
                 <td>
-                    <a class="btn-svg" asp-action="Edit" asp-route-id="@item.Id"><img src="~/Images/Edit.svg" alt="Edit" /></a> |
-                    <a class="btn-svg" asp-action="Delete" asp-route-id="@item.Id"><img src="~/Images/Delete.svg" alt="Delete" /></a>
+                    <a class="btn-svg" asp-controller="OrcamentoRec" asp-action="Edit" asp-route-id="@item.Id"><img src="~/Images/Edit.svg" alt="Edit" /></a> |
+                    <a class="btn-svg" asp-controller="OrcamentoRec" asp-action="Delete" asp-route-id="@item.Id"><img src="~/Images/Delete.svg" alt="Delete" /></a>
                 </td>
             </tr>
         }
@@ -78,22 +72,15 @@
 
 
 
-<!-- Exibição de Gastos -->
 
 <h2>Despesas</h2>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Gastos.First().Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Gastos.First().Value)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Gastos.First().ActionCreate)
-            </th>
-            <th></th>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Data</th>
+            <th>Ações</th>
         </tr>
     </thead>
     <tbody>
@@ -110,8 +97,8 @@
                     @item.ActionCreate.ToString("dd/MM/yyyy")
                 </td>
                 <td>
-                    <a class="btn-svg" asp-action="Edit__G" asp-route-id="@item.Id"><img src="~/Images/Edit.svg" alt="Edit" /></a> |
-                    <a class="btn-svg" asp-action="Delete__G" asp-route-id="@item.Id"><img src="~/Images/Delete.svg" alt="Delete" /></a>
+                    <a class="btn-svg" asp-controller="OrcamentoPs" asp-action="Edit__G" asp-route-id="@item.Id"><img src="~/Images/Edit.svg" alt="Edit" /></a> |
+                    <a class="btn-svg" asp-controller="OrcamentoPs"  asp-action="Delete__G" asp-route-id="@item.Id"><img src="~/Images/Delete.svg" alt="Delete" /></a>
                 </td>
             </tr>
         }
@@ -129,10 +116,14 @@
 
 
 
-<!-- Exibição do Saldo Final -->
 <h2>Saldo Final</h2>
 <p>O saldo final do mês é: <strong>@saldoFinal.ToString("C")</strong></p>
+<a asp-action="DownloadRelatorio" class="btn btn-primary">Baixar Relatório PDF</a>
 
+@if (saldoFinal < 0)
+{
+    <p>Melhor economizar, porque ultrapassou seu Orçamento</p>
+}
 
 
 
@@ -142,219 +133,3 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@* 
-
-
-<!-- Gráfico de Receita -------------->
-<div class="dashboard-container">
-    <!-- Gráfico de Barras -->
-    <div class="chart-container">
-        <canvas id="barChart__R" class="chart"></canvas>
-    </div>
-
-    <!-- Gráfico de Linhas -->
-    <div class="chart-container">
-        <canvas id="lineChart__R" class="chart"></canvas>
-    </div>
-
-    <!-- Gráfico de Pizza -->
-    <div class="chart-container">
-        <canvas id="pieChart__R" class="chart"></canvas>
-    </div>
-</div>
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script>
-    // Obtenção dos dados do servidor
-    var descriptions = @Html.Raw(Json.Serialize(descricaoReceitas));
-    var values = @Html.Raw(Json.Serialize(valorReceitas));
-    var dates = @Html.Raw(Json.Serialize(datasReceitas));
-
-    // Gráfico de Barras
-    var ctxBar = document.getElementById('barChart__R').getContext('2d');
-    var barChart = new Chart(ctxBar, {
-        type: 'bar',
-        data: {
-            labels: descriptions,
-            datasets: [{
-                label: 'Valores',
-                data: values,
-                backgroundColor: 'rgba(54, 162, 235, 0.6)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 1
-            }]
-        }
-    });
-
-    // Gráfico de Linhas
-    var ctxLine = document.getElementById('lineChart__R').getContext('2d');
-    var lineChart = new Chart(ctxLine, {
-        type: 'line',
-        data: {
-            labels: dates,
-            datasets: [{
-                label: 'Valores por Data',
-                data: values,
-                backgroundColor: 'rgba(75, 192, 192, 0.4)',
-                borderColor: 'rgba(75, 192, 192, 1)',
-                borderWidth: 1,
-                fill: true
-            }]
-        }
-    });
-
-    // Gráfico de Pizza
-    var ctxPie = document.getElementById('pieChart__R').getContext('2d');
-    var pieChart = new Chart(ctxPie, {
-        type: 'pie',
-        data: {
-            labels: descriptions,
-            datasets: [{
-                label: 'Distribuição de Gastos',
-                data: values,
-                backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0', '#9966ff', '#ff9f40'],
-            }]
-        }
-    });
-</script>
-
-
-
-
-<!------------------ Gráfico de Gastos -------------->
-
-
-<div class="dashboard-container">
-    <!-- Gráfico de Barras -->
-    <div class="chart-container">
-        <canvas id="barChart__G" class="chart"></canvas>
-    </div>
-
-    <!-- Gráfico de Linhas -->
-    <div class="chart-container">
-        <canvas id="lineChart__G" class="chart"></canvas>
-    </div>
-
-    <!-- Gráfico de Pizza -->
-    <div class="chart-container">
-        <canvas id="pieChart__G" class="chart"></canvas>
-    </div>
-</div>
-
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script>
-    // Obtenção dos dados do servidor
-    var descriptions = @Html.Raw(Json.Serialize(descricaoGastos));
-    var values = @Html.Raw(Json.Serialize(valorGastos));
-    var dates = @Html.Raw(Json.Serialize(datasGastos));
-
-    // Gráfico de Barras
-    var ctxBar = document.getElementById('barChart__G').getContext('2d');
-    var barChart = new Chart(ctxBar, {
-        type: 'bar',
-        data: {
-            labels: descriptions,
-            datasets: [{
-                label: 'Valores',
-                data: values,
-                backgroundColor: 'rgba(54, 162, 235, 0.6)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 1
-            }]
-        }
-    });
-
-    // Gráfico de Linhas
-    var ctxLine = document.getElementById('lineChart__G').getContext('2d');
-    var lineChart = new Chart(ctxLine, {
-        type: 'line',
-        data: {
-            labels: dates,
-            datasets: [{
-                label: 'Valores por Data',
-                data: values,
-                backgroundColor: 'rgba(75, 192, 192, 0.4)',
-                borderColor: 'rgba(75, 192, 192, 1)',
-                borderWidth: 1,
-                fill: true
-            }]
-        }
-    });
-
-    // Gráfico de Pizza
-    var ctxPie = document.getElementById('pieChart__G').getContext('2d');
-    var pieChart = new Chart(ctxPie, {
-        type: 'pie',
-        data: {
-            labels: descriptions,
-            datasets: [{
-                label: 'Distribuição de Gastos',
-                data: values,
-                backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0', '#9966ff', '#ff9f40'],
-            }]
-        }
-    });
-</script>  *@

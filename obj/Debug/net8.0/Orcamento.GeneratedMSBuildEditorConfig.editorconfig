@@ -39,6 +39,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvR2VyYWxcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoGeral/DashBoardGe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvR2VyYWxcRGFzaEJvYXJkR2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoGeral/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvR2VyYWxcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -59,6 +63,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvUHNcQ3JlYXRlX19HLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoPs/DashBoardD.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvUHNcRGFzaEJvYXJkRC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoPs/Delete__G.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvUHNcRGVsZXRlX19HLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -75,8 +83,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvUHNcSW5kZXhfX0cuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoPs/Pesquisa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvUHNcUGVzcXVpc2EuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoRec/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvUmVjXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoRec/DashBoardRec.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvUmVjXERhc2hCb2FyZFJlYy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoRec/Delete.cshtml]
@@ -93,6 +109,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoRec/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvUmVjXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/OrcamentoRec/Pesquisa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JjYW1lbnRvUmVjXFBlc3F1aXNhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/srmig/OneDrive/Área de Trabalho/Orcamento/Orcamento/Views/Shared/Error.cshtml]

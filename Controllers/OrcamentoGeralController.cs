@@ -2,10 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Drawing.Printing;
+using System;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
+using iText.Kernel.Geom;
+using iText.Kernel.Pdf;
+using iText.Layout.Element;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Orcamento.InfraStructure.Data.Context;
 using Orcamento.Models;
+using Org.BouncyCastle.Ocsp;
+using Microsoft.CodeAnalysis.Elfie.Serialization;
+using Org.BouncyCastle.Asn1.Pkcs;
 
 namespace Orcamento.Controllers
 {
@@ -19,8 +31,156 @@ namespace Orcamento.Controllers
             _context = context;
         }
 
+        public async Task<IActionResult> DownloadRelatorio()
+        {
+
+            var gastos = _context.OrcamentoP.ToList();
+            var receita = _context.OrcamentoRec.ToList();
+
+
+            var orderedOrcamentosG = gastos.OrderByDescending(o => o.ActionCreate).ToList();
+            var orderedOrcamentosR = receita.OrderByDescending(o => o.ActionCreateR).ToList();
+
+
+            var orcamentos = new OrcamentoP
+            {
+                Gastos = orderedOrcamentosG
+
+            };
+            if (orcamentos == null)
+            {
+                return NotFound();
+
+
+            }
+
+            var orcamentosR = new OrcamentoRec
+            {
+                Receita = orderedOrcamentosR
+
+            };
+            if (orcamentosR == null)
+            {
+                return NotFound();
+
+            }
+
+
+            using (var memoryStream = new MemoryStream())
+            {
+                using (var doc = new Document(iTextSharp.text.PageSize.A4))
+                {
+                    iTextSharp.text.pdf.PdfWriter.GetInstance(doc, memoryStream);
+
+          
+                    doc.Open();
+
+               
+                    doc.Add(new iTextSharp.text.Paragraph("Relatório Geral "));
+                    doc.Add(new iTextSharp.text.Paragraph(" "));
+
+                  
+                    var tabela = new PdfPTable(5);
+
+                    tabela.AddCell("Descrição");
+                    tabela.AddCell("Valor");
+                    tabela.AddCell("Data");
+                    tabela.AddCell("Tipo de Operação");
+                    tabela.AddCell("Forma de Pagamento");
+                    tabela.AddCell(" ");
+                    tabela.AddCell(" ");
+                    tabela.AddCell(" ");
+                    tabela.AddCell(" ");
+                    tabela.AddCell(" ");
+
+                    for (int i = 0; i < orderedOrcamentosG.Count; i++)
+                    {
+                        tabela.AddCell(orderedOrcamentosG[i].Description);
+                        tabela.AddCell(orderedOrcamentosG[i].Value.ToString("F2"));
+                        tabela.AddCell(orderedOrcamentosG[i].ActionCreate.ToString("dd/MM/yyyy"));
+                        tabela.AddCell(orderedOrcamentosG[i].TipoOperacao);
+                        tabela.AddCell(orderedOrcamentosG[i].FormaPag);
+
+                       
+                        if (i == orderedOrcamentosG.Count - 1)
+                        {
+                            tabela.AddCell(" ");
+                            tabela.AddCell(" ");
+                            tabela.AddCell(" ");
+                            tabela.AddCell(" ");
+                            tabela.AddCell(" ");
+
+                        }
+                    }
+                
+
+                    for (int i = 0; i < orderedOrcamentosR.Count; i++)
+                    {
+                        tabela.AddCell(orderedOrcamentosR[i].DescriptionR);
+                        tabela.AddCell(orderedOrcamentosR[i].ValueR.ToString("F2"));
+                        tabela.AddCell(orderedOrcamentosR[i].ActionCreateR.ToString("dd/MM/yyyy"));
+                        tabela.AddCell(orderedOrcamentosR[i].TipoOperacao);
+                        tabela.AddCell(" ");
+
+             
+                        if (i == orderedOrcamentosR.Count - 1)
+                        {
+                            var totalValueg = orderedOrcamentosG.Sum(item => item.Value);
+                            var totalValueRec = orderedOrcamentosR.Sum(item => item.ValueR);
+                            var TotalGeral = totalValueRec - totalValueg;
+
+
+                            tabela.AddCell(" ");
+                            tabela.AddCell(" ");
+                            tabela.AddCell(" ");
+                            tabela.AddCell(" ");
+                            tabela.AddCell(" ");
+
+                            tabela.AddCell("Total do Orçamento");
+                            tabela.AddCell(TotalGeral.ToString("F2"));
+                            tabela.AddCell(" ");
+                            tabela.AddCell(" ");
+                            tabela.AddCell(" ");
+
+                        }
+                    }
+                    var totalValue = orderedOrcamentosG.Sum(item => item.Value);
+                    var totalValueR = orderedOrcamentosR.Sum(item => item.ValueR);
+                    var totalGeral = totalValueR - totalValue;
+                    tabela.AddCell("Total no fim do mês");
+                    tabela.AddCell(totalGeral.ToString("F2"));
+                 
+                    doc.Add(tabela);
+
+                 
+                    doc.Close();
+                }
+
+               
+                var pdfBytes = memoryStream.ToArray();
+                return File(pdfBytes, "application/pdf", "RelatorioMensal.pdf");
+            }
+        }
 
         // GET: OrcamentoGeral
+        public IActionResult DashboardGe()
+        {
+
+            var gastos = _context.OrcamentoP.ToList();
+            var receita = _context.OrcamentoRec.ToList();
+
+            var orderedOrcamentosG = gastos.OrderByDescending(o => o.ActionCreate).ToList();
+            var orderedOrcamentosR = receita.OrderByDescending(o => o.ActionCreateR).ToList();
+
+            var orcamentoGeral = new OrcamentoGeral
+            {
+                Gastos = orderedOrcamentosG,
+                Receitas = orderedOrcamentosR
+            };
+
+            return View(orcamentoGeral);
+        }
+
         public IActionResult Index()
         {
       

@@ -41,7 +41,18 @@ namespace Orcamento.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("FormaPag")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<Guid?>("OrcamentoGeralId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid?>("OrcamentoPId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TipoOperacao")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<double>("Value")
@@ -50,6 +61,8 @@ namespace Orcamento.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("OrcamentoGeralId");
+
+                    b.HasIndex("OrcamentoPId");
 
                     b.ToTable("OrcamentoP");
                 });
@@ -70,12 +83,21 @@ namespace Orcamento.Migrations
                     b.Property<Guid?>("OrcamentoGeralId")
                         .HasColumnType("TEXT");
 
+                    b.Property<Guid?>("OrcamentoRecId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TipoOperacao")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<double>("ValueR")
                         .HasColumnType("REAL");
 
                     b.HasKey("Id");
 
                     b.HasIndex("OrcamentoGeralId");
+
+                    b.HasIndex("OrcamentoRecId");
 
                     b.ToTable("OrcamentoRec");
                 });
@@ -85,6 +107,10 @@ namespace Orcamento.Migrations
                     b.HasOne("Orcamento.Models.OrcamentoGeral", null)
                         .WithMany("Gastos")
                         .HasForeignKey("OrcamentoGeralId");
+
+                    b.HasOne("Orcamento.Models.OrcamentoP", null)
+                        .WithMany("Gastos")
+                        .HasForeignKey("OrcamentoPId");
                 });
 
             modelBuilder.Entity("Orcamento.Models.OrcamentoRec", b =>
@@ -92,6 +118,10 @@ namespace Orcamento.Migrations
                     b.HasOne("Orcamento.Models.OrcamentoGeral", null)
                         .WithMany("Receitas")
                         .HasForeignKey("OrcamentoGeralId");
+
+                    b.HasOne("Orcamento.Models.OrcamentoRec", null)
+                        .WithMany("Receita")
+                        .HasForeignKey("OrcamentoRecId");
                 });
 
             modelBuilder.Entity("Orcamento.Models.OrcamentoGeral", b =>
@@ -99,6 +129,16 @@ namespace Orcamento.Migrations
                     b.Navigation("Gastos");
 
                     b.Navigation("Receitas");
+                });
+
+            modelBuilder.Entity("Orcamento.Models.OrcamentoP", b =>
+                {
+                    b.Navigation("Gastos");
+                });
+
+            modelBuilder.Entity("Orcamento.Models.OrcamentoRec", b =>
+                {
+                    b.Navigation("Receita");
                 });
 #pragma warning restore 612, 618
         }

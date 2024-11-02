@@ -8,5 +8,8 @@ namespace Orcamento.Models
         public string DescriptionR { get; set; } = string.Empty;
         public double ValueR { get; set; }
         public DateTime ActionCreateR { get; set; }
+
+        public string TipoOperacao { get; set; }
+        public List<OrcamentoRec> Receita { get; set; }
     }
 }

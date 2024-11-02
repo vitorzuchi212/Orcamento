@@ -1,0 +1,171 @@
+﻿@model Orcamento.Models.OrcamentoGeral
+
+
+@{
+
+
+    ViewData["Title"] = "Dashboard Geral";
+
+
+    var hasData = Model != null && Model.Gastos.Any();
+    var hasDataR = Model != null && Model.Receitas.Any();
+
+
+
+
+
+
+    var totalGastos = Model.Gastos.Sum(item => item.Value);
+    var totalReceitas = Model.Receitas.Sum(item => item.ValueR);
+    var saldoFinal = totalReceitas - totalGastos;
+    totalGastos.ToString("F2");
+    totalReceitas.ToString("F2");
+    saldoFinal.ToString("F2");
+
+
+
+}
+
+<h1>DashBoard Geral</h1>
+
+
+
+
+
+
+<!-- Tabela de Dados -->
+<table class="table">
+    <thead>
+        <tr class="spaceb ret">
+
+            <td class="cxx"><p class="cx">Total Gasto <br /> R$ </p></td>
+            <td class="cxx"><p class="cx">Total 1° Trimestre <br /> R$ </p></td>
+            <td class="cxx"><p class="cx">Total 2° Trimestre <br /> R$ </p></td>
+            <td class="cxx"><p class="cx">Total 3° Trimestre <br /> R$ </p></td>
+            <td class="cxx"><p class="cx">Total 4° Trimestre <br /> R$ </p></td>
+        </tr>
+    </thead>
+    <tbody>
+        @if (hasData)
+        {
+            
+                <tr class="dashboard-container">
+             
+                    <td class="chart-container">
+                        <canvas id="barChart" class="chart graf">  </canvas>
+                    </td>
+
+
+                    <td class="chart-container chartdiv">
+                        <canvas id="pieChart" class="chart graf"></canvas>
+                    </td>
+
+
+                    <td class="chart-container chartdiv">
+                        <canvas id="barChartY" class="chart graf"></canvas>
+                    </td>
+
+
+                    <td class="chart-container chartdiv">
+                        <canvas id="barChartT" class="chart graf"></canvas>
+                    </td>
+                </tr>
+            
+        }
+        else
+        {
+            <tr>
+                <td colspan="5" style="text-align: center;">Nenhum dado disponível</td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+    var totalGastos = @Html.Raw(Json.Serialize(totalGastos));
+    var totalReceita = @Html.Raw(Json.Serialize(totalReceitas));
+   
+    function createBarChart(ctx, labels, data, label) {
+        return new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: label,
+                    data: data,
+                    backgroundColor: ['#ff6384', '#36a2eb'],
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            }
+        });
+    }
+
+
+    var ctxBar1 = document.getElementById('barChart').getContext('2d');
+    createBarChart(ctxBar1, ['Gastos','Receita'], [totalGastos, totalReceita], 'Grafico Geral');
+
+    <!--Gráfico de Barras Horizontal-- >
+    var ctxBar = document.getElementById('barChartY').getContext('2d');
+    var barChart = new Chart(ctxBar, {
+        type: 'bar',
+        data: {
+            labels: ['Gastos', 'Receita'],
+            datasets: [{
+                indexAxis: 'y',
+                label: 'Grafico Geral',
+                data: [totalGastos, totalReceita],
+                backgroundColor: ['#ff6384', '#36a2eb'],
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        }
+    });
+
+
+
+
+    var ctxBarT = document.getElementById('barChartT').getContext('2d');
+    createBarChart(ctxBarT, ['Gastos', 'Receita'], [totalGastos, totalReceita], 'Saldo por Trimestre');
+
+    var ctxPie = document.getElementById('pieChart').getContext('2d');
+    var pieChart = new Chart(ctxPie, {
+        type: 'pie',
+        data: {
+            labels: ['Gastos', 'Receita'],
+            datasets: [{
+                label: 'Grafico Geral',
+                data: [totalGastos, totalReceita],
+                backgroundColor: ['#ff6384', '#36a2eb'],
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    position: 'left', 
+
+                }
+            },
+            layout: {
+                padding: {
+                    left: 25 
+                }
+            }
+        }
+    });
+
+</script>

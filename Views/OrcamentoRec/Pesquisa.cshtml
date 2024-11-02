@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Orcamento.Models.OrcamentoRec>
+
+@{
+    ViewData["Title"] = "Resultados da Pesquisa";
+}
+
+<h1>Resultados da Pesquisa</h1>
+
+<div class="spaceb">
+    <form asp-action="Pesquisa" method="get">
+        <label for="txtp">Pesquisa</label>
+        <input type="text" name="txt_pesq" id="txtp" class="inputpesq" />
+        <button type="submit">Pesquisar</button>
+    </form>
+
+
+
+    <form method="get" asp-action="Index">
+        <label for="trimestre">Trimestre:</label>
+        <select id="trimestre" name="trimestre">
+            <option value="">Selecione</option>
+            <option value="Trimestre1">Trimestre 1</option>
+            <option value="Trimestre2">Trimestre 2</option>
+            <option value="Trimestre3">Trimestre 3</option>
+            <option value="Trimestre4">Trimestre 4</option>
+        </select>
+        <label for="ano">Ano:</label>
+        <select id="ano" name="ano">
+            <option value="">Selecione</option>
+            @foreach (var ano in ViewBag.Anos)
+            {
+                <option value="@ano">@ano</option>
+            }
+        </select>
+        <button type="submit">Filtrar</button>
+    </form>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Data</th>
+            <th>Tipo de Operação</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.DescriptionR</td>
+                    <td>@item.ValueR.ToString("C")</td>
+                    <td>@item.ActionCreateR.ToString("dd/MM/yyyy")</td>
+                    <td>@item.TipoOperacao</td>
+                     <td>
+                        <a class="btn-svg" asp-action="Edit" asp-route-id="@item.Id"><img src="~/Images/Edit.svg" alt="Edit" /></a> |
+                        <a class="btn-svg" asp-action="Delete" asp-route-id="@item.Id"><img src="~/Images/Delete.svg" alt="Delete" /></a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5" style="text-align: center;">Nenhum resultado encontrado</td>
+            </tr>
+        }
+    </tbody>
+</table>

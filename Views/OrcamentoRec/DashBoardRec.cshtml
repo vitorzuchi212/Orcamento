@@ -1,0 +1,175 @@
+﻿@model IEnumerable<Orcamento.Models.OrcamentoRec>
+
+@{
+    ViewData["Title"] = "Index";
+
+    var hasData = Model != null && Model.Any();
+
+    var totalValue = Model.Sum(item => item.ValueR).ToString("F2");
+    var descriptions = hasData ? Model.Select(item => item.DescriptionR).ToList() : new List<string>();
+    var values = hasData ? Model.Select(item => item.ValueR).ToList() : new List<double>();
+    var dates = hasData ? Model.Select(item => item.ActionCreateR.ToString("dd/MM/yyyy")).ToList() : new List<string>();
+
+
+
+    var totalTrimestre1 = Model.Where(item => item.ActionCreateR.Month >= 1 && item.ActionCreateR.Month <= 3).Sum(item => item.ValueR);
+    var totalTrimestre2 = Model.Where(item => item.ActionCreateR.Month >= 4 && item.ActionCreateR.Month <= 6).Sum(item => item.ValueR);
+    var totalTrimestre3 = Model.Where(item => item.ActionCreateR.Month >= 7 && item.ActionCreateR.Month <= 9).Sum(item => item.ValueR);
+    var totalTrimestre4 = Model.Where(item => item.ActionCreateR.Month >= 10 && item.ActionCreateR.Month <= 12).Sum(item => item.ValueR);
+
+    var totalTriCounts = new List<double> { totalTrimestre1, totalTrimestre2, totalTrimestre3, totalTrimestre4 };
+
+
+
+}
+
+
+
+<h1>DashBoard Receita</h1>
+
+
+
+<!-- Tabela de Dados -->
+<table class="table">
+    <thead>
+        <tr class="spaceb ret">
+
+            <td class="cxx"><p class="cx">Total Gasto <br /> R$ @totalValue</p></td>
+            <td class="cxx"><p class="cx">Total 1° Trimestre <br /> R$ @totalTrimestre1</p></td>
+            <td class="cxx"><p class="cx">Total 2° Trimestre <br /> R$ @totalTrimestre2</p></td>
+            <td class="cxx"><p class="cx">Total 3° Trimestre <br /> R$ @totalTrimestre3</p></td>
+            <td class="cxx"><p class="cx">Total 4° Trimestre <br /> R$ @totalTrimestre4</p></td>
+        </tr>
+    </thead>
+    <tbody>
+        @if (hasData)
+        {
+                <tr class="dashboard-container">
+                    <td class="chart-container">
+                        <canvas id="barChart" class="chart graf">  </canvas>
+                    </td>
+
+                   
+                    <td class="chart-container chartdiv" >
+                        <canvas id="pieChart" class="chart graf"></canvas>
+                    </td>
+
+               
+                    <td class="chart-container chartdiv">
+                        <canvas id="barChartY" class="chart graf"></canvas>
+                    </td>
+
+                 
+                    <td class="chart-container chartdiv">
+                        <canvas id="barChartT" class="chart graf"></canvas>
+                    </td>
+                </tr>
+            
+        }
+        else
+        {
+            <tr>
+                <td colspan="5" style="text-align: center;">Nenhum dado disponível</td>
+            </tr>
+        }
+    </tbody>
+  
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    var descriptions = @Html.Raw(Json.Serialize(descriptions));
+    var values = @Html.Raw(Json.Serialize(values));
+    var dates = @Html.Raw(Json.Serialize(dates));
+
+
+    var totalTriCounts = @Html.Raw(Json.Serialize(totalTriCounts));
+
+
+
+    function createBarChart(ctx, labels, data, label) {
+        return new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: label,
+                    data: data,
+                    backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0', '#9966ff', '#ff9f40'],
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            }
+        });
+    }
+
+    var ctxBar1 = document.getElementById('barChart').getContext('2d');
+    createBarChart(ctxBar1, descriptions, values, 'Total de Receitas');
+
+    var ctxBar = document.getElementById('barChartY').getContext('2d');
+    var barChart = new Chart(ctxBar, {
+        type: 'bar',
+        data: {
+            labels: descriptions,
+            datasets: [{
+                indexAxis: 'y',
+                label: 'Fontes de renda',
+                data: values,
+                backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0', '#9966ff', '#ff9f40'],
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        }
+    });
+
+
+
+
+    var ctxBarT = document.getElementById('barChartT').getContext('2d');
+    createBarChart(ctxBarT, descriptions, values, 'Saldo por Trimestre');
+
+
+
+
+
+    var ctxPie = document.getElementById('pieChart').getContext('2d');
+    var pieChart = new Chart(ctxPie, {
+        type: 'pie',
+        data: {
+            labels: ['Trimestre 1', 'Trimestre 2', 'Trimestre 3', 'Trimestre 4'],
+            datasets: [{
+                label: 'Trimestres',
+                data: totalTriCounts,
+                backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#4bc0c0'],
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    position: 'left',
+                }
+            },
+            layout: {
+                padding: {
+                    left: 25
+                }
+            }
+        }
+    });
+
+
+</script>

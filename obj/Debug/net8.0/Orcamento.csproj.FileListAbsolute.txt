@@ -508,7 +508,6 @@ D:\pc\Orcamento\Orcamento\obj\Debug\net8.0\refint\Orcamento.dll
 D:\pc\Orcamento\Orcamento\obj\Debug\net8.0\Orcamento.pdb
 D:\pc\Orcamento\Orcamento\obj\Debug\net8.0\Orcamento.genruntimeconfig.cache
 D:\pc\Orcamento\Orcamento\obj\Debug\net8.0\ref\Orcamento.dll
-C:\Users\srmig\OneDrive\Área de Trabalho\Orcamento\Orcamento\bin\Debug\net8.0\System.Text.Json.dll
 E:\Orcamento\Orcamento\bin\Debug\net8.0\appsettings.Development.json
 E:\Orcamento\Orcamento\bin\Debug\net8.0\appsettings.json
 E:\Orcamento\Orcamento\bin\Debug\net8.0\Orcamento.staticwebassets.runtime.json
@@ -1021,3 +1020,21 @@ D:\Orcamento\Orcamento\obj\Debug\net8.0\scopedcss\projectbundle\Orcamento.bundle
 D:\Orcamento\Orcamento\obj\Debug\net8.0\Orcamento.csproj.Up2Date
 D:\Orcamento\Orcamento\obj\Debug\net8.0\Orcamento.genruntimeconfig.cache
 D:\Orcamento\Orcamento\obj\Debug\net8.0\ref\Orcamento.dll
+C:\Users\srmig\OneDrive\Área de Trabalho\Orcamento\Orcamento\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\srmig\OneDrive\Área de Trabalho\Orcamento\Orcamento\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\srmig\OneDrive\Área de Trabalho\Orcamento\Orcamento\bin\Debug\net8.0\System.Formats.Asn1.dll
+C:\Users\srmig\OneDrive\Área de Trabalho\Orcamento\Orcamento\bin\Debug\net8.0\BouncyCastle.Crypto.dll
+C:\Users\srmig\OneDrive\Área de Trabalho\Orcamento\Orcamento\bin\Debug\net8.0\itext.barcodes.dll
+C:\Users\srmig\OneDrive\Área de Trabalho\Orcamento\Orcamento\bin\Debug\net8.0\itext.bouncy-castle-connector.dll
+C:\Users\srmig\OneDrive\Área de Trabalho\Orcamento\Orcamento\bin\Debug\net8.0\itext.forms.dll
+C:\Users\srmig\OneDrive\Área de Trabalho\Orcamento\Orcamento\bin\Debug\net8.0\itext.io.dll
+C:\Users\srmig\OneDrive\Área de Trabalho\Orcamento\Orcamento\bin\Debug\net8.0\itext.kernel.dll
+C:\Users\srmig\OneDrive\Área de Trabalho\Orcamento\Orcamento\bin\Debug\net8.0\itext.layout.dll
+C:\Users\srmig\OneDrive\Área de Trabalho\Orcamento\Orcamento\bin\Debug\net8.0\itext.pdfa.dll
+C:\Users\srmig\OneDrive\Área de Trabalho\Orcamento\Orcamento\bin\Debug\net8.0\itext.pdfua.dll
+C:\Users\srmig\OneDrive\Área de Trabalho\Orcamento\Orcamento\bin\Debug\net8.0\itext.sign.dll
+C:\Users\srmig\OneDrive\Área de Trabalho\Orcamento\Orcamento\bin\Debug\net8.0\itext.styledxmlparser.dll
+C:\Users\srmig\OneDrive\Área de Trabalho\Orcamento\Orcamento\bin\Debug\net8.0\itext.svg.dll
+C:\Users\srmig\OneDrive\Área de Trabalho\Orcamento\Orcamento\bin\Debug\net8.0\itext.commons.dll
+C:\Users\srmig\OneDrive\Área de Trabalho\Orcamento\Orcamento\bin\Debug\net8.0\itextsharp.dll
+C:\Users\srmig\OneDrive\Área de Trabalho\Orcamento\Orcamento\bin\Debug\net8.0\Microsoft.DotNet.PlatformAbstractions.dll

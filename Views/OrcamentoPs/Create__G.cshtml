@@ -4,14 +4,12 @@
     ViewData["Title"] = "Despesa";
 }
 
-<h1>Lançar Despesa</h1>
-
+<h1>Lançamento de Dados</h1>
 
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create__G">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form asp-action="Create__G" method="post">
             <div class="form-group">
                 <label asp-for="Description" class="control-label">Descrição</label>
                 <input asp-for="Description" class="form-control" />
@@ -27,6 +25,28 @@
                 <input asp-for="ActionCreate" class="form-control" />
                 <span asp-validation-for="ActionCreate" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label asp-for="TipoOperacao" class="control-label">Operações</label>
+                <select asp-for="TipoOperacao" id="tipoOperacao" class="form-control" onchange="toggleFormaPag()">
+                    <option value="">Selecione uma Categoria</option>
+                    <option value="Despesa">Despesa</option>
+                    <option value="Receita">Receita</option>
+                </select>
+                <span asp-validation-for="TipoOperacao" class="text-danger"></span>
+            </div>
+
+            <div class="form-group" id="formaPagamentoDiv" style="display: none;">
+                <label asp-for="FormaPag" class="control-label">Forma de Pagamento</label>
+                <select asp-for="FormaPag" class="form-control">
+                    <option value="">Selecione uma Categoria</option>
+                    <option value="Debito">Debito</option>
+                    <option value="Credito">Credito</option>
+                    <option value="Especie">Espécie</option>
+                    <option value="Pix">Pix</option>
+                </select>
+                <span asp-validation-for="FormaPag" class="text-danger"></span>
+            </div>
+
             <div class="Btns">
                 <input type="submit" value="Lançar" class="Btn_Padrao" />
                 <a asp-action="Index__G" class="Btn_Padrao">Voltar para Home</a>
@@ -35,8 +55,24 @@
     </div>
 </div>
 
+<script type="text/javascript">
+    function toggleFormaPag() {
+        var tipoOperacao = document.getElementById("tipoOperacao").value;
+        var formaPagamentoDiv = document.getElementById("formaPagamentoDiv");
+
+        if (tipoOperacao === "Despesa") {
+            formaPagamentoDiv.style.display = "block";
+        } else {
+            formaPagamentoDiv.style.display = "none";
+        }
+    }
+
+  
+</script>
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
